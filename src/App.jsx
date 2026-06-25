@@ -156,7 +156,7 @@ const LandingPage = () => {
           </div>
           <div className="text-4xl md:text-5xl font-bold mb-6 flex flex-col gap-y-1.5">
             <h1>Ваш надёжный</h1>
-            <span class="bg-gradient-to-r from-[#a5b4fc] to-[#60a5fa] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#a5b4fc] to-[#60a5fa] bg-clip-text text-transparent">
               IT-партнёр
             </span>
           </div>
@@ -181,6 +181,24 @@ const LandingPage = () => {
                 </span>
               </div>
             ))}
+          </div>
+
+          <div className="mt-auto pt-8 border-t border-white/10">
+            <p className="text-xs uppercase tracking-wider text-white/50 mb-4 font-semibold">
+              Партнёры
+            </p>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4 text-white/40">
+              {["Microsoft", "Cisco", "VMware", "1C", "Kaspersky"].map(
+                (brand) => (
+                  <span
+                    key={brand}
+                    className="font-bold cursor-pointer hover:text-white/75 transition-colors duration-300"
+                  >
+                    {brand}
+                  </span>
+                ),
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -227,7 +245,7 @@ const LandingPage = () => {
               <input
                 type="tel"
                 placeholder="+7 (___) ___-__-__"
-                className="w-full p-3 bg-gray-50 border-[#E5E7EB] rounded-2xl focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/75 outline-none transition-al duration-300"
+                className="w-full p-3 bg-gray-50 border-[#E5E7EB] rounded-2xl focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/75 outline-none transition-all duration-300"
               />
             </div>
 
@@ -248,10 +266,10 @@ const LandingPage = () => {
                 Услуга
               </span>
 
-              <select className="w-full p-3 bg-gray-50 border-[#E5E7EB]rounded-2xl text-gray-500 outline-none">
+              <select className="w-full p-3 bg-gray-50 border-[#E5E7EB] rounded-2xl text-gray-500 outline-none">
                 <option>Выберите услугу...</option>
                 <option>IT-инфраструктура</option>
-                <option>Информационная безопастность</option>
+                <option>Информационная безопасность</option>
                 <option>Цифровая трансформация</option>
                 <option>On-Site Решения</option>
                 <option>Техническая поддержка</option>
@@ -268,10 +286,102 @@ const LandingPage = () => {
                 className="w-full max-h-35 p-3 bg-gray-50 border-[#E5E7EB] rounded-2xl focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/75 outline-none transition-all duration-300"
               ></textarea>
             </div>
+            <div className="flex flex-col gap-y-2.5">
+              <button className="w-full bg-[#4f46e5] text-white py-4 rounded-2xl font-bold hover:bg-blue-700 cursor-pointer transition-all duration-300 active:scale-95">
+                Получить бесплатный аудит →
+              </button>
+              <div className="flex items-center text-[11px] gap-x-1 justify-center md:text-[5px] sm:text-[5px]">
+                <span className="text-[#99A1AF] text-[9px] md:text-[11px] ">
+                  Нажимая кнопку, вы соглашаетесь с
+                </span>
+                <a
+                  target="_blank"
+                  href="https://mircifry.ru/"
+                  className="text-[#615FFF] text-[9px] md:text-[11px]"
+                >
+                  политикой конфиденциальности
+                </a>
+              </div>
+            </div>
 
-            <button className="w-full bg-[#4f46e5] text-white py-4 rounded-2xl font-bold hover:bg-blue-700 cursor-pointer transition-all duration-300 active:scale-95">
-              Получить бесплатный аудит →
-            </button>
+            <div className="mt-8 pt-6 border-t border-gray-100 space-y-3">
+              <a
+                href="tel:+74951234567"
+                className="flex items-center gap-3 text-gray-600 hover:text-[#4f46e5] transition-colors"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.6667 11.28V13.28C14.6675 13.4657 14.6294 13.6495 14.555 13.8196C14.4807 13.9897 14.3716 14.1424 14.2348 14.2679C14.0979 14.3934 13.9364 14.489 13.7605 14.5485C13.5847 14.608 13.3983 14.6301 13.2134 14.6133C11.1619 14.3904 9.19137 13.6894 7.46004 12.5667C5.84926 11.5431 4.48359 10.1775 3.46004 8.56668C2.33336 6.82748 1.6322 4.84734 1.41337 2.78668C1.39671 2.60233 1.41862 2.41652 1.4777 2.2411C1.53679 2.06567 1.63175 1.90447 1.75655 1.76776C1.88134 1.63105 2.03324 1.52182 2.20256 1.44703C2.37189 1.37224 2.55493 1.33352 2.74004 1.33335H4.74004C5.06357 1.33016 5.37723 1.44473 5.62254 1.6557C5.86786 1.86667 6.02809 2.15964 6.07337 2.48001C6.15779 3.12006 6.31434 3.7485 6.54004 4.35335C6.62973 4.59196 6.64915 4.85129 6.59597 5.1006C6.5428 5.34991 6.41928 5.57875 6.24004 5.76001L5.39337 6.60668C6.34241 8.27571 7.72434 9.65764 9.39337 10.6067L10.24 9.76001C10.4213 9.58077 10.6501 9.45725 10.8994 9.40408C11.1488 9.35091 11.4081 9.37032 11.6467 9.46001C12.2516 9.68571 12.88 9.84227 13.52 9.92668C13.8439 9.97237 14.1396 10.1355 14.3511 10.385C14.5625 10.6345 14.6748 10.9531 14.6667 11.28Z"
+                    stroke="#7C86FF"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span className="text-sm">+7 (915) 677-85-88</span>
+              </a>
+              <a
+                href="mailto:info@mir-cifry.ru"
+                className="flex items-center gap-3 text-gray-600 hover:text-[#4f46e5] transition-colors"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.3333 2.66669H2.66659C1.93021 2.66669 1.33325 3.26364 1.33325 4.00002V12C1.33325 12.7364 1.93021 13.3334 2.66659 13.3334H13.3333C14.0696 13.3334 14.6666 12.7364 14.6666 12V4.00002C14.6666 3.26364 14.0696 2.66669 13.3333 2.66669Z"
+                    stroke="#7C86FF"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14.6666 4.66669L8.68659 8.46669C8.48077 8.59564 8.2428 8.66403 7.99992 8.66403C7.75704 8.66403 7.51907 8.59564 7.31325 8.46669L1.33325 4.66669"
+                    stroke="#7C86FF"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span className="text-sm">info@mir-cifry.ru</span>
+              </a>
+              <div className="flex items-center gap-3 text-gray-600">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.40075 14.5326C9.64075 13.462 13.3334 9.99531 13.3334 6.66665C13.3334 5.25216 12.7715 3.8956 11.7713 2.89541C10.7711 1.89522 9.41457 1.33331 8.00008 1.33331C6.58559 1.33331 5.22904 1.89522 4.22885 2.89541C3.22865 3.8956 2.66675 5.25216 2.66675 6.66665C2.66675 9.99531 6.35941 13.462 7.59941 14.5326C7.71493 14.6195 7.85555 14.6665 8.00008 14.6665C8.14461 14.6665 8.28523 14.6195 8.40075 14.5326Z"
+                    stroke="#7C86FF"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8 8.66669C9.10457 8.66669 10 7.77126 10 6.66669C10 5.56212 9.10457 4.66669 8 4.66669C6.89543 4.66669 6 5.56212 6 6.66669C6 7.77126 6.89543 8.66669 8 8.66669Z"
+                    stroke="#7C86FF"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span className="text-sm">
+                  г. Тамбов, ул. Интернациональная, дом №16А
+                </span>
+              </div>
+            </div>
           </form>
         </div>
       </div>
